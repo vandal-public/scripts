@@ -53,4 +53,4 @@ npm run build || error "Failed to build project"
 
 # Start project with interactive mode
 log "Starting project in interactive mode..."
-exec npm run start
+npm run start
