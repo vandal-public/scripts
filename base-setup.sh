@@ -48,9 +48,5 @@ log "Installing dependencies..."
 npm install || error "Failed to install dependencies"
 
 # Build project
-log "Building project..."
-exec npm run build || error "Failed to build project"
-
-# Start project with interactive mode
-log "Starting project in interactive mode..."
-exec npm run start
+log "Building project... NEW "
+exec npm run build &&  npm run start
