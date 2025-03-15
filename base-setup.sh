@@ -52,7 +52,7 @@ log "Building project... NEW "
 # Function to handle the start command
 start_app() {
   echo "Starting the application..."
-  npm run start
+  exec npm run start
 }
 
 # Run the build command in the background
