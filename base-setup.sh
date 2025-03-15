@@ -57,7 +57,7 @@ wait $!
 # Check if the build process exited successfully
 if [ $? -eq 0 ]; then
   echo "Starting the application..."
-  exec npm run start
+  npm run start
 else
   echo "Build failed, not starting the application."
   exit 1
