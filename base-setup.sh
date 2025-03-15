@@ -49,4 +49,23 @@ npm install || error "Failed to install dependencies"
 
 # Build project
 log "Building project... NEW "
-exec npm run build &&  npm run start
+# Function to handle the start command
+start_app() {
+  echo "Starting the application..."
+  npm run start
+}
+
+# Run the build command in the background
+echo "Building the application..."
+npm run build &
+
+# Wait for the build process to finish
+wait $!
+
+# Check if the build process exited successfully
+if [ $? -eq 0 ]; then
+  start_app
+else
+  echo "Build failed, not starting the application."
+  exit 1
+fi
