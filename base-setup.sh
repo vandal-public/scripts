@@ -38,7 +38,8 @@ nvm use 22 || error "Failed to use Node.js v22"
 
 # Clone repository
 log "Cloning repository..."
-git clone "$REPO_URL" token || error "Failed to clone repository"
+git clone "$REPO_URL" token &
+wait $!
 
 # Navigate to project directory
 cd token || error "Failed to enter project directory"
